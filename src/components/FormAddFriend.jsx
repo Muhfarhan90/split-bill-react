@@ -18,6 +18,7 @@ const FormAddFriend = ({ onAddFriend }) => {
       image: `${image}?=${id}`,
       balance: 0,
     };
+    // localStorage.setItem("friends", JSON.stringify([...friends, newFriend]));
     onAddFriend(newFriend);
     setName("");
     setImage("https://i.pravatar.cc/150");
@@ -41,7 +42,7 @@ const FormAddFriend = ({ onAddFriend }) => {
         value={image}
         onChange={(e) => setImage(e.target.value)}
       />
-      <button type="submit" className="p-4 rounded-lg bg-gray-300">
+      <button type="submit" className="p-4 rounded-lg bg-gray-300 hover:bg-gray-400">
         Tambah
       </button>
     </form>

@@ -15,7 +15,8 @@ const FormSplitBill = ({ selectedFriend, onSplitBill }) => {
     onSplitBill(whoIsPaying === "user" ? friendBill : -myBill);
   }
   return (
-    <form action=""
+    <form
+      action=""
       onSubmit={handleSubmit}
       className="p-4 bg-gray-200 flex flex-col mt-8 w-[500px]"
     >
@@ -35,7 +36,7 @@ const FormSplitBill = ({ selectedFriend, onSplitBill }) => {
         onChange={(e) => setMyBill(e.target.value)}
       />
       <label htmlFor="">💴Tagihan {selectedFriend.name}</label>
-      <input type="text" disabled className="p-2" value={friendBill} />
+      <input type="text" disabled className="p-2 border border-black rounded-sm" value={friendBill} />
       <label htmlFor="">🙏Ditalangin sama</label>
       <select
         name=""
@@ -47,7 +48,9 @@ const FormSplitBill = ({ selectedFriend, onSplitBill }) => {
         <option value="user">Kamu</option>
         <option value="friend">{selectedFriend.name}</option>
       </select>
-      <button>Tambah</button>
+      <button className="py-2 bg-gray-300 hover:bg-gray-400 mt-4">
+        Tambah
+      </button>
     </form>
   );
 };
